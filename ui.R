@@ -6,7 +6,7 @@ fluidPage(theme = 'spacelab.css', #id = "page",
   
   tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "css_hacks.css"),
-    tags$title("Monte Carlo Power Analysis for Indirect Effects")
+    tags$title("Monte Carlo Power Analysis for Longitudinal Mediation Models")
   ),
   
   #--- HTML <BODY> CODE ------------------------------------------------------#
@@ -14,7 +14,7 @@ fluidPage(theme = 'spacelab.css', #id = "page",
   # <header>
   withTags(
     header(
-      h3("Monte Carlo Power Analysis for Indirect Effects"),
+      h3("Monte Carlo Power Analysis for Longitudinal Mediation Models"),
       p("Written by Alexander M. Schoemann (",
         a(href="mailto:schoemanna@ecu.edu","Contact"),
         "), Aaron J. Boulton, & Stephen D. Short")
@@ -40,10 +40,9 @@ fluidPage(theme = 'spacelab.css', #id = "page",
           table(
             td(nowrap = NA, label("Model")),
             td(selectInput(inputId = "model", label = NULL,
-                           choices = list("One Mediator" = "one_mediator",
-                                          "Two Parallel Mediators" = "two_parallel_mediators",
-                                          "Two Serial Mediators" = "two_serial_mediators"), 
-                           selected = "one_mediator"))
+                           choices = list("Two Time Point" = "two_timepoint",
+                                          "Three Time Point" = "three_timepoint",
+                                    selected = "three_timepoint"))
           )
         ),
         
@@ -110,10 +109,9 @@ fluidPage(theme = 'spacelab.css', #id = "page",
             td(nowrap = NA, label("Input Method")),
             td(selectInput(inputId = "input_method", label = NULL,
                            choices = list("Correlations" = "correlations",
-                                          # STANDARDIZED COEFFICIENTS TO BE ADDED
                                           "Standardized Coefficients" = "stdcoef")
                       ),
-                      selected = "correlations")
+                      selected = "stdcoef")
           )
         ),
         
@@ -220,4 +218,5 @@ tags$p(tags$b("6. Initiate Power Analysis. "),
         tableOutput("power"))
     )
   )
+)
 )
