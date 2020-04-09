@@ -1,7 +1,9 @@
 
 # Monte Carlo Power Analysis for Longitudinal Mediation models
 
-## PLEASE NOTE: APP IS STILL IN DEVELOPMENT AND NOT CURRENTLY FUNCTIONAL
+## PLEASE NOTE: APP IS STILL IN DEVELOPMENT AND NOT CURRENTLY FUNCTIONAL. 
+
+# If you are interested in updates on the app, please leave an Issue on Github and use the Update tag
 
 Shiny App for Monte Carlo Power analysis for Longitudinal Mediation Models
 
