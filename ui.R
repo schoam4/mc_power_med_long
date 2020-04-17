@@ -41,8 +41,8 @@ fluidPage(theme = 'spacelab.css', #id = "page",
             td(nowrap = NA, label("Model")),
             td(selectInput(inputId = "model", label = NULL,
                            choices = list("Two Time Point" = "two_timepoint",
-                                          "Three Time Point" = "three_timepoint",
-                                    selected = "three_timepoint"))
+                                          "Three Time Point" = "three_timepoint")),
+                                    selected = "three_timepoint")
           )
         ),
         
@@ -58,12 +58,12 @@ fluidPage(theme = 'spacelab.css', #id = "page",
         ), 
         
         # Reactive UI dependent on chosen objective
-        wellPanel(id = "obj_options_well", uiOutput("obj_options")),
+        wellPanel(id = "obj_options_well", uiOutput("obj_options"),
         
         # Number of replications input
         withTags(
           table(
-            td(nowrap = NA, label("# of Replications")),
+            td(nowrap = NA, label("Number of Replications")),
             td(numericInput(inputId = "powReps", label = NULL, value = 1000))
           )
         ),
@@ -92,6 +92,7 @@ fluidPage(theme = 'spacelab.css', #id = "page",
           )
         )
       )
+    )
     ),
     
     #--- MIDDLE COLUMN -------------------------------------------------------#
@@ -218,5 +219,4 @@ tags$p(tags$b("6. Initiate Power Analysis. "),
         tableOutput("power"))
     )
   )
-)
 )
